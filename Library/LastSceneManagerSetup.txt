@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/_Secen_0_.unity
+  isLoaded: 1
+  isActive: 1
