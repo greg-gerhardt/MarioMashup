@@ -4,6 +4,7 @@ using System.Collections;
 public class Walk : AbstractBehavior {
 
 	public float speed = 50f;
+	public float slow = 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +29,7 @@ public class Walk : AbstractBehavior {
 			body2d.velocity = new Vector2 (velX, body2d.velocity.y);
 		}
 
-		//stop mario when no button is pushed
-		if (rightHold == 0 && leftHold == 0) {
-			body2d.velocity = new Vector2 ( 0, body2d.velocity.y);
-		}
+
 	}
 
 }
