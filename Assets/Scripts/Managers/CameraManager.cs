@@ -27,6 +27,7 @@ public class CameraManager : MonoBehaviour {
 		var x = transform.position.x;
 		var y = transform.position.y;
 
+		//Makes a deadbox where the camera wont follow the player
 		if (IsFollowing) {
 			if (Mathf.Abs (x - Player.position.x) > Margin.x) {
 				x = Mathf.Lerp (x, Player.position.x, Smoothing.x * Time.deltaTime);

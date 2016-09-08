@@ -17,9 +17,6 @@ public class Walk : AbstractBehavior {
 		var right = inputState.GetButtonValue (inputButtons [0]);
 		var left = inputState.GetButtonValue (inputButtons [1]);
 
-		var rightHold = inputState.GetButtonHoldTime (inputButtons [0]);
-		var leftHold = inputState.GetButtonHoldTime (inputButtons [1]);
-	
 		if (right || left) {
 
 			var tmpSpeed = speed;

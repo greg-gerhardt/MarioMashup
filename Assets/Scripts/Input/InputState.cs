@@ -18,7 +18,7 @@ public class ButtonState{
 //for other behaviors.
 public enum Directions{
 	Right = 1,
-	Left = -1
+	Left = -1,
 }
 
 public class InputState : MonoBehaviour {
