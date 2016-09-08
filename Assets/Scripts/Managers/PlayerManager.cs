@@ -30,6 +30,9 @@ public class PlayerManager : MonoBehaviour {
 		if (inputState.absVelX > 0) {
 			ChangeAnimationState (1);
 		}
+		if (inputState.absVelY > 0) {
+			ChangeAnimationState (2);
+		}
 
 	}
 
