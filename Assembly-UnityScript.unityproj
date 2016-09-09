@@ -6,10 +6,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7A1ACE22-2C8A-0A25-1A74-8E2A635EE74A}</ProjectGuid>
+    <ProjectGuid>{AEA972B3-4CC1-D170-BB37-9E828B85BB1D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-UnityScript</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -45,18 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Behavior\AbstractBehavior.cs" />
-     <Compile Include="Assets\Scripts\Behavior\FaceDirection.cs" />
-     <Compile Include="Assets\Scripts\Behavior\Jump.cs" />
-     <Compile Include="Assets\Scripts\Behavior\SimpleMovement.cs" />
-     <Compile Include="Assets\Scripts\Behavior\Walk.cs" />
-     <Compile Include="Assets\Scripts\Input\InputManager.cs" />
-     <Compile Include="Assets\Scripts\Input\InputState.cs" />
-     <Compile Include="Assets\Scripts\Managers\CameraManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\CollisionManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\PlayerState.cs" />
-     <Compile Include="Assets\Scripts\Weapons\BarretaManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\ewBehaviourScript.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
