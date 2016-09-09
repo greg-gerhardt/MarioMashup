@@ -35,7 +35,15 @@ public class BarretaManager : MonoBehaviour {
 			mousePos.y = mousePos.y - objectPos.y;
 
 			float angle = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle));
+
+			if (angle < 90f) {
+				transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle));
+			}
+
+			if (angle > 90f || angle < -90f) {
+				transform.rotation = Quaternion.Euler (new Vector3 (180, 0, -(angle)));
+			}
+
 		}
 	}
 
