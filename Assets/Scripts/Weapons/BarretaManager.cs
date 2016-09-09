@@ -9,11 +9,24 @@ public class BarretaManager : MonoBehaviour {
 
 	public bool isActive = false;
 
-	private int weaponNum = 0;
+	public int weaponNum = 0;
+
+	public Transform Player;
+
+	public Vector2 Offset;
+
+	void Start (){
+	}
 
 	void Update () {
 		//rotation
 		if (isActive) {
+			Vector2 tempOff = new Vector2 ();
+			tempOff.x = Player.position.x + Offset.x;
+			tempOff.y = Player.position.y + Offset.y;
+
+			transform.position = tempOff;
+
 			Vector3 mousePos = Input.mousePosition;
 			mousePos.z = 5.23f;
 
