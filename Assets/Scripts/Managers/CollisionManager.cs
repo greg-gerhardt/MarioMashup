@@ -5,14 +5,14 @@ public class CollisionManager : PlayerState {
 	public BarretaManager Gun;
 
 	void OnCollisionEnter2D (Collision2D coll){
-		if (coll.gameObject.name == "Ground") {
+		if (coll.gameObject.tag == "Ground") {
 			Standing = true;
 		}
 
 	}
 
 	void OnCollisionExit2D (Collision2D coll){
-		if (coll.gameObject.name == "Ground"){
+		if (coll.gameObject.tag == "Ground"){
 			Standing = false;
 		}
 	}
