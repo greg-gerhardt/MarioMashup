@@ -16,12 +16,13 @@ public class BarretaShoot : AbstractBehavior {
 	// Update is called once per frame
 	void Update () {
 		var onButton = inputState.GetButtonValue (inputButtons [0]);
+		var holdButton = inputState.GetButtonHoldTime (inputButtons [0]);
 
 		var tempOff = Vector2.zero; 
 		tempOff.x = Gun.position.x + OffSet.x;
 		tempOff.y = Gun.position.y + OffSet.y;
 	
-		if (onButton && Properties.isActive) {
+		if (onButton && Properties.isActive && holdButton < 0.00001f) {
 			Instantiate (Bullet, tempOff, Quaternion.Euler (new Vector3 (0, 0, Properties.angle)));
 			print ("Mouse is Clicked");
 		}
