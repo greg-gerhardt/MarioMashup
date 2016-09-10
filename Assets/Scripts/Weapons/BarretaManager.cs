@@ -23,6 +23,7 @@ public class BarretaManager : MonoBehaviour {
 	void Update () {
 		//rotation
 		if (isActive) {
+			transform.SetParent (Player);
 
 			Vector2 tempOff = new Vector2 ();
 			tempOff.x = Player.position.x + Offset.x;
@@ -40,11 +41,11 @@ public class BarretaManager : MonoBehaviour {
 			angle = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
 			if (angle < 90f) {
-				transform.rotation = Quaternion.Euler (new Vector3 (0, 0, angle));
+				transform.localRotation = Quaternion.Euler (new Vector3 (0, 0, angle));
 			}
 
 			if (angle > 90f || angle < -90f) {
-				transform.rotation = Quaternion.Euler (new Vector3 (180, 0, -(angle)));
+				transform.localRotation = Quaternion.Euler (new Vector3 (180, 0, -(angle)));
 			}
 
 		}

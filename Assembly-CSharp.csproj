@@ -58,7 +58,7 @@
      <Compile Include="Assets\Scripts\Managers\PlayerState.cs" />
      <Compile Include="Assets\Scripts\Weapons\BarretaManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\BarretaShoot.cs" />
-     <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Weapons\BulletMovement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
