@@ -4,12 +4,12 @@
     <Files>
       <File FileName="Assets\Scripts\Managers\CollisionManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Managers\PlayerState.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\BarretaManager.cs" Line="33" Column="4" />
-      <File FileName="Assets\Scripts\Weapons\Bullet.cs" Line="30" Column="3" />
-      <File FileName="Assets\Scripts\Weapons\BarretaShoot.cs" Line="25" Column="61" />
+      <File FileName="Assets\Scripts\Weapons\BarretaManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Bullet.cs" Line="39" Column="42" />
+      <File FileName="Assets\Scripts\Weapons\BarretaShoot.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Behavior\Walk.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Behavior\AbstractBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Input\InputManager.cs" Line="55" Column="31" />
+      <File FileName="Assets\Scripts\Input\InputManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
