@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemy\EnemyCollision.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyManagre.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
      <Compile Include="Assets\Scripts\Mario\Behavior\AbstractBehavior.cs" />
      <Compile Include="Assets\Scripts\Mario\Behavior\FaceDirection.cs" />
@@ -59,6 +60,8 @@
      <Compile Include="Assets\Scripts\Mario\Managers\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\Mario\Managers\PlayerProperties.cs" />
      <Compile Include="Assets\Scripts\Mario\Managers\PlayerState.cs" />
+     <Compile Include="Assets\Scripts\SoundEffects\GunShotSound.cs" />
+     <Compile Include="Assets\Scripts\SoundEffects\WalkingSounds.cs" />
      <Compile Include="Assets\Scripts\UI\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\UI\TimeManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\BarretaManager.cs" />

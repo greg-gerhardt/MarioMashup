@@ -5,11 +5,6 @@ public class Walk : AbstractBehavior {
 
 	public float speed = 50f;
 	public float slow = 10f;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,8 +20,5 @@ public class Walk : AbstractBehavior {
 
 			body2d.velocity = new Vector2 (velX, body2d.velocity.y);
 		}
-
-
 	}
-
 }

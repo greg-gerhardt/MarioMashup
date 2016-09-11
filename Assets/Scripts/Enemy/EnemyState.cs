@@ -6,6 +6,7 @@ public class EnemyState : MonoBehaviour {
 	public GameObject DestroyThis;
 	public ScoreManager ScrProp;
 
+
 	// Use this for initialization
 	void Start () {
 	
