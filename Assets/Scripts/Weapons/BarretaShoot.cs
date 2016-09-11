@@ -4,13 +4,16 @@ using System.Collections;
 public class BarretaShoot : AbstractBehavior {
 
 	public GameObject Bullet; 
+	public GameObject Barreta;
 	public BarretaManager Properties;
 	public Vector2 OffSet;
 	public Transform Gun;
 
+	private Animator State;
+
 	// Use this for initialization
 	void Start () {
-	
+		State = Barreta.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -24,7 +27,10 @@ public class BarretaShoot : AbstractBehavior {
 	
 		if (onButton && Properties.isActive && holdButton < 0.00001f) {
 			Instantiate (Bullet, tempOff, Quaternion.Euler (new Vector3 (0, 0, Properties.angle)));
-			print ("Mouse is Clicked");
+			State.SetInteger ("BarretaState", 1);
+		} 
+		else {
+			State.SetInteger ("BarretaState", 0);
 		}
 	}
 }

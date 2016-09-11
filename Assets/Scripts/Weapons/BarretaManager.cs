@@ -8,13 +8,9 @@ public class BarretaManager : MonoBehaviour {
 	public int Ammo;
 
 	public bool isActive = false;
-
 	public int weaponNum = 0;
-
 	public Transform Player;
-
 	public Vector2 Offset;
-
 	public float angle;
 
 	void Start (){
@@ -24,10 +20,8 @@ public class BarretaManager : MonoBehaviour {
 		//rotation
 		if (isActive) {
 			Vector2 tempOff = new Vector2 ();
-			tempOff.x = Player.position.x + Offset.x;
-			tempOff.y = Player.position.y + Offset.y;
 
-			transform.position = tempOff;
+			tempOff.y = Player.position.y + Offset.y;
 
 			Vector3 mousePos = Input.mousePosition;
 			mousePos.z = 5.23f;
@@ -40,12 +34,15 @@ public class BarretaManager : MonoBehaviour {
 
 			if (angle < 90f) {
 				transform.localRotation = Quaternion.Euler (new Vector3 (0, 0, angle));
+				tempOff.x = Player.position.x + Offset.x;
 			}
 
 			if (angle > 90f || angle < -90f) {
 				transform.localRotation = Quaternion.Euler (new Vector3 (180, 0, -(angle)));
-			}
+				tempOff.x = Player.position.x + -(Offset.x);
+				}
 
+			transform.position = tempOff;
 		}
 	}
 

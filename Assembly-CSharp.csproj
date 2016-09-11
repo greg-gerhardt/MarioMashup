@@ -45,17 +45,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Behavior\AbstractBehavior.cs" />
-     <Compile Include="Assets\Scripts\Behavior\FaceDirection.cs" />
-     <Compile Include="Assets\Scripts\Behavior\Jump.cs" />
-     <Compile Include="Assets\Scripts\Behavior\SimpleMovement.cs" />
-     <Compile Include="Assets\Scripts\Behavior\Walk.cs" />
-     <Compile Include="Assets\Scripts\Input\InputManager.cs" />
-     <Compile Include="Assets\Scripts\Input\InputState.cs" />
-     <Compile Include="Assets\Scripts\Managers\CameraManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\CollisionManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\PlayerState.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyCollision.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
+     <Compile Include="Assets\Scripts\Mario\Behavior\AbstractBehavior.cs" />
+     <Compile Include="Assets\Scripts\Mario\Behavior\FaceDirection.cs" />
+     <Compile Include="Assets\Scripts\Mario\Behavior\Jump.cs" />
+     <Compile Include="Assets\Scripts\Mario\Behavior\SimpleMovement.cs" />
+     <Compile Include="Assets\Scripts\Mario\Behavior\Walk.cs" />
+     <Compile Include="Assets\Scripts\Mario\Input\InputManager.cs" />
+     <Compile Include="Assets\Scripts\Mario\Input\InputState.cs" />
+     <Compile Include="Assets\Scripts\Mario\Managers\CameraManager.cs" />
+     <Compile Include="Assets\Scripts\Mario\Managers\CollisionManager.cs" />
+     <Compile Include="Assets\Scripts\Mario\Managers\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\Mario\Managers\PlayerProperties.cs" />
+     <Compile Include="Assets\Scripts\Mario\Managers\PlayerState.cs" />
+     <Compile Include="Assets\Scripts\UI\ScoreManager.cs" />
+     <Compile Include="Assets\Scripts\UI\TimeManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\BarretaManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\BarretaShoot.cs" />
      <Compile Include="Assets\Scripts\Weapons\BulletMovement.cs" />
