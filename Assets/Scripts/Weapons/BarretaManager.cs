@@ -23,8 +23,6 @@ public class BarretaManager : MonoBehaviour {
 	void Update () {
 		//rotation
 		if (isActive) {
-			transform.SetParent (Player);
-
 			Vector2 tempOff = new Vector2 ();
 			tempOff.x = Player.position.x + Offset.x;
 			tempOff.y = Player.position.y + Offset.y;
