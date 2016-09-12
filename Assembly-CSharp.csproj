@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Mario\Managers\PlayerState.cs" />
      <Compile Include="Assets\Scripts\SoundEffects\GunShotSound.cs" />
      <Compile Include="Assets\Scripts\SoundEffects\WalkingSounds.cs" />
+     <Compile Include="Assets\Scripts\UI\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\UI\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\UI\TimeManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\BarretaManager.cs" />
