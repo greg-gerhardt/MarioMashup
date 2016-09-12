@@ -13,7 +13,7 @@ public class GunShotSound : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("Fire1") && Properties.isActive) {
+		if (Input.GetButtonDown ("Fire1") && Properties.Ammo != 0) {
 			GunSnd.Play ();
 		}
 	}

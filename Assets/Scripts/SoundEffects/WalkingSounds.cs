@@ -13,12 +13,11 @@ public class WalkingSounds : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Moving.absVelX != 0f && Input.GetButtonDown("Horizontal")) {
+		if ( Input.GetButtonDown("Horizontal")) {
 			WalkSnd.Play ();
 		}
-		if (Moving.absVelX == 0f) {
+		if (Input.GetButtonUp ("Horizontal")) {
 			WalkSnd.Stop ();
 		}
-
 	}
 }

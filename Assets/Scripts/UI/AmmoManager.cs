@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class AmmoManager : MonoBehaviour {
+public class AmmoManager: MonoBehaviour {
 	public BarretaManager AmmoProp;
 
 	private Text AmmoText;
