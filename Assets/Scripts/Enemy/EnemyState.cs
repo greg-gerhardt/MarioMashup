@@ -4,12 +4,14 @@ using System.Collections;
 public class EnemyState : MonoBehaviour {
 	public int Health;
 	public GameObject DestroyThis;
-	public ScoreManager ScrProp;
 
+	private GameObject ScoreObj;
+	private ScoreManager ScrProp;
 
 	// Use this for initialization
 	void Start () {
-	
+		ScoreObj = GameObject.Find ("Score");
+		ScrProp = ScoreObj.GetComponent<ScoreManager> ();
 	}
 	
 	// Update is called once per frame

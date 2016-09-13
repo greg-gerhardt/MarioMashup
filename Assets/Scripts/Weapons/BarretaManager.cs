@@ -13,10 +13,14 @@ public class BarretaManager : MonoBehaviour {
 	public Vector2 Offset;
 	public float angle;
 
+	private Vector3 MouseToWorld;
+
 	void Start (){
 	}
 
 	void Update () {
+		MouseToWorld = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+
 		//rotation
 		if (isActive) {
 			Vector2 tempOff = new Vector2 ();
@@ -34,15 +38,22 @@ public class BarretaManager : MonoBehaviour {
 
 			if (angle < 90f) {
 				transform.localRotation = Quaternion.Euler (new Vector3 (0, 0, angle));
-				tempOff.x = Player.position.x + Offset.x;
 			}
 
 			if (angle > 90f || angle < -90f) {
 				transform.localRotation = Quaternion.Euler (new Vector3 (180, 0, -(angle)));
-				tempOff.x = Player.position.x + -(Offset.x);
-				}
+			}
 
-			transform.position = tempOff;
+			if (Player.localScale.x == -1f) {
+				tempOff.x = Player.position.x + -(Offset.x);
+				transform.position = tempOff;
+			}
+
+			if (Player.localScale.x == 1f) {
+				tempOff.x = Player.position.x + Offset.x;
+				transform.position = tempOff;
+			}
+				
 		}
 	}
 

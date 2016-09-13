@@ -22,13 +22,19 @@ public class BarretaShoot : AbstractBehavior {
 		var holdButton = inputState.GetButtonHoldTime (inputButtons [0]);
 
 		var tempOff = Vector2.zero; 
-		tempOff.x = Gun.position.x + OffSet.x;
+		if (Gun.localRotation.y == 0f) {
+			tempOff.x = Gun.position.x + OffSet.x;
+		}
+		if (Mathf.Abs(Gun.localRotation.y) > 0f) {
+			tempOff.x = Gun.position.x - OffSet.x;
+		}
 		tempOff.y = Gun.position.y + OffSet.y;
 	 
 		if (onButton && Properties.isActive && holdButton < 0.00001f && Properties.Ammo != 0) {
 			Instantiate (Bullet, tempOff, Quaternion.Euler (new Vector3 (0, 0, Properties.angle)));
 			State.SetInteger ("BarretaState", 1);
 			Properties.Ammo -= 1;
+			print (tempOff);
 		} 
 		else {
 			State.SetInteger ("BarretaState", 0);

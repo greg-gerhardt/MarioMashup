@@ -1,21 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SoundEffects\WalkingSounds.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HealthOverlay\HealthManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Weapons\BarretaManager.cs" Line="10" Column="31" />
-      <File FileName="Assets\Scripts\Weapons\BarretaShoot.cs" Line="28" Column="87" />
-      <File FileName="Assets\Scripts\Weapons\BulletMovement.cs" Line="17" Column="37" />
+      <File FileName="Assets\Scripts\Weapons\BarretaManager.cs" Line="59" Column="2" />
+      <File FileName="Assets\Scripts\Spawner\SpawnManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyManagre.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\ScoreManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\TimeManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SoundEffects\GunShotSound.cs" Line="16" Column="60" />
-      <File FileName="Assets\Scripts\SoundEffects\WalkingSounds.cs" Line="20" Column="20" />
-      <File FileName="Assets\Scripts\AmmoPack\AmmoCollision.cs" Line="15" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyState.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Mario\Behavior\Jump.cs" Line="20" Column="25" />
+      <File FileName="Assets\Scripts\Weapons\BarretaShoot.cs" Line="29" Column="33" />
+      <File FileName="Assets\Scripts\HealthOverlay\HealthManager.cs" Line="7" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <RunToCursorBreakpoint file="C:\Users\RULEROFTHEFREEWORLD\Documents\MarioMashup\Assets\Scripts\SoundEffects\WalkingSounds.cs" line="22" column="3" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

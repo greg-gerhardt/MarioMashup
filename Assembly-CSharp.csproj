@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyCollision.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyManagre.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
+     <Compile Include="Assets\Scripts\HealthOverlay\HealthManager.cs" />
      <Compile Include="Assets\Scripts\Mario\Behavior\AbstractBehavior.cs" />
      <Compile Include="Assets\Scripts\Mario\Behavior\FaceDirection.cs" />
      <Compile Include="Assets\Scripts\Mario\Behavior\Jump.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\Mario\Managers\PlayerState.cs" />
      <Compile Include="Assets\Scripts\SoundEffects\GunShotSound.cs" />
      <Compile Include="Assets\Scripts\SoundEffects\WalkingSounds.cs" />
+     <Compile Include="Assets\Scripts\Spawner\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\UI\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\UI\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\UI\TimeManager.cs" />

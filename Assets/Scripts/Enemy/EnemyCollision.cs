@@ -16,7 +16,6 @@ public class EnemyCollision : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll){
 		if (coll.gameObject.tag == "Bullet") {
 			EnemyProperties.Health -= GunDamage.Damage;
-			print (EnemyProperties.Health);
 			Zombie.AddForce (-(Blowback.InverseMagnitude) * InvBlow, ForceMode2D.Impulse);
 		}
 	}
