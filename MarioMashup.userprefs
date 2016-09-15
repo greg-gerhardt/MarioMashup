@@ -1,16 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HealthOverlay\HealthManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Mario\Managers\CollisionManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Weapons\BarretaManager.cs" Line="59" Column="2" />
-      <File FileName="Assets\Scripts\Spawner\SpawnManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\EnemyManagre.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\BarretaManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Spawner\SpawnManager.cs" Line="24" Column="36" />
       <File FileName="Assets\Scripts\UI\ScoreManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\EnemyCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyManagre.cs" Line="16" Column="30" />
+      <File FileName="Assets\Scripts\Enemy\EnemyCollision.cs" Line="19" Column="43" />
       <File FileName="Assets\Scripts\Enemy\EnemyState.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Mario\Behavior\Jump.cs" Line="20" Column="25" />
-      <File FileName="Assets\Scripts\Weapons\BarretaShoot.cs" Line="29" Column="33" />
-      <File FileName="Assets\Scripts\HealthOverlay\HealthManager.cs" Line="7" Column="2" />
+      <File FileName="Assets\Scripts\Mario\Managers\CollisionManager.cs" Line="20" Column="85" />
+      <File FileName="Assets\Scripts\Mario\Managers\PlayerState.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\UI\HealthManager.cs" Line="19" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
