@@ -7,4 +7,17 @@ public class PlayerState : MonoBehaviour {
 
 	public int Weapon;
 	public int health;
+
+	public Vector2 BlowBack;
+
+	public float direction;
+	public Rigidbody2D physics;
+
+	void Start (){
+		physics = GetComponent<Rigidbody2D> ();
+	}
+
+	void Update (){
+		direction = transform.localScale.x;
+	}
 }

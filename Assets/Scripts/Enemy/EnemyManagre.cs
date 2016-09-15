@@ -7,11 +7,13 @@ public class EnemyManagre : MonoBehaviour {
 
 	private GameObject Player;
 	private Transform PTrans;
+	private float RanSpeed;
 
 	// Use this for initialization
 	void Start () {
 		Player = GameObject.Find ("Mario");
-		PTrans = Player.GetComponent<Transform> (); 
+		PTrans = Player.GetComponent<Transform> ();
+		RanSpeed = Random.value + 1;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +27,7 @@ public class EnemyManagre : MonoBehaviour {
 			dir = 1;
 		}
 
-		transform.position += transform.right * MovementSpeed * dir * Time.deltaTime;
-		InverseMagnitude = transform.right * MovementSpeed * dir * Time.deltaTime;
+		transform.position += transform.right * MovementSpeed * dir * Time.deltaTime * RanSpeed;
+		InverseMagnitude = transform.right * MovementSpeed * dir * Time.deltaTime * RanSpeed;
 	}
 }
