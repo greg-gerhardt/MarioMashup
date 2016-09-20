@@ -7,6 +7,7 @@ public class PlayerState : MonoBehaviour {
 
 	public int Weapon;
 	public int health;
+	public int TotalAmmo;
 
 	public Vector2 BlowBack;
 

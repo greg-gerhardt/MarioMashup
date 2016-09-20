@@ -60,13 +60,17 @@
      <Compile Include="Assets\Scripts\Mario\Managers\CollisionManager.cs" />
      <Compile Include="Assets\Scripts\Mario\Managers\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\Mario\Managers\PlayerState.cs" />
+     <Compile Include="Assets\Scripts\Parallax\ParallaxManager.cs" />
      <Compile Include="Assets\Scripts\SoundEffects\GunShotSound.cs" />
      <Compile Include="Assets\Scripts\SoundEffects\WalkingSounds.cs" />
      <Compile Include="Assets\Scripts\Spawner\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\UI\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\UI\HealthManager.cs" />
+     <Compile Include="Assets\Scripts\UI\HealthState.cs" />
+     <Compile Include="Assets\Scripts\UI\LevelPicker.cs" />
      <Compile Include="Assets\Scripts\UI\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\UI\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\UI\TotalAmmoManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\BarretaManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\BarretaShoot.cs" />
      <Compile Include="Assets\Scripts\Weapons\BulletMovement.cs" />

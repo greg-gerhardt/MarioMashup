@@ -8,6 +8,7 @@ public class EnemyManagre : MonoBehaviour {
 	private GameObject Player;
 	private Transform PTrans;
 	private float RanSpeed;
+	private int dir;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +19,6 @@ public class EnemyManagre : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		int dir;
-
 		if (PTrans.position.x < transform.position.x) {
 			dir = -1;
 		}
@@ -27,7 +26,12 @@ public class EnemyManagre : MonoBehaviour {
 			dir = 1;
 		}
 
-		transform.position += transform.right * MovementSpeed * dir * Time.deltaTime * RanSpeed;
 		InverseMagnitude = transform.right * MovementSpeed * dir * Time.deltaTime * RanSpeed;
+	}
+
+	void OnTriggerStay2D(Collider2D other){
+		if (other.gameObject.name == "Mario") {
+			transform.position += transform.right * MovementSpeed * dir * Time.deltaTime * RanSpeed;
+		}
 	}
 }

@@ -34,7 +34,6 @@ public class BarretaShoot : AbstractBehavior {
 			Instantiate (Bullet, tempOff, Quaternion.Euler (new Vector3 (0, 0, Properties.angle)));
 			State.SetInteger ("BarretaState", 1);
 			Properties.Ammo -= 1;
-			print (tempOff);
 		} 
 		else {
 			State.SetInteger ("BarretaState", 0);

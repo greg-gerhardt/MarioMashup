@@ -11,10 +11,13 @@ public class PlayerManager : MonoBehaviour {
 	//private Walk walkBehavior;
 	private Animator animator;
 
+	private CollisionManager Death;
+
 	void Awake () {
 		inputState = GetComponent<InputState> ();
 		//walkBehavior = GetComponent<Walk> ();
 		animator = GetComponent<Animator> ();
+		Death = GetComponent<CollisionManager> ();
 	}
 
 	// Use this for initialization
@@ -30,7 +33,7 @@ public class PlayerManager : MonoBehaviour {
 		if (inputState.absVelX > 0) {
 			ChangeAnimationState (1);
 		}
-		if (inputState.absVelY > 0) {
+		if (Death.health <= 0) {
 			ChangeAnimationState (2);
 		}
 

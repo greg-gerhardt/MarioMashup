@@ -6,6 +6,7 @@ public class BarretaManager : MonoBehaviour {
 
 	public int Damage;
 	public int Ammo;
+	public int TotalAmmo;
 
 	public bool isActive = false;
 	public int weaponNum = 0;
@@ -14,8 +15,12 @@ public class BarretaManager : MonoBehaviour {
 	public float angle;
 
 	private Vector3 MouseToWorld;
+	private GameObject Gun;
+	private Animator GunAnim;
 
 	void Start (){
+		Gun = GameObject.Find ("Barreta");
+		GunAnim = Gun.GetComponent<Animator> ();
 	}
 
 	void Update () {
@@ -53,8 +58,19 @@ public class BarretaManager : MonoBehaviour {
 				tempOff.x = Player.position.x + Offset.x;
 				transform.position = tempOff;
 			}
+
+			if (Input.GetKeyDown (KeyCode.R)) {
+				StartCoroutine ("Reload");
+			}
 				
 		}
+	}
+
+	IEnumerator Reload(){
+		GunAnim.SetInteger ("BarretaState", 2);
+		AnimatorStateInfo temp = GunAnim.GetCurrentAnimatorStateInfo (0);
+		yield return new WaitForSeconds(temp.length);
+		Ammo = 10;
 	}
 
 }
