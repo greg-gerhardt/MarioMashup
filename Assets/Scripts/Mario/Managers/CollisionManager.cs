@@ -1,26 +1,40 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CollisionManager : PlayerState {
 	public BarretaManager Gun;
 	public MonoBehaviour[] DisableScripts;
+	public Text WinText;
 
 	private Transform Destination;
 	private Animator PlayerAnim;
-	private bool EndComplete;
+	private bool MarioInPain, EndComplete, Winner;
 	private GameObject Spawner;
 	private SpawnManager Spawned;
 
 	void Start(){
 		PlayerAnim = GetComponent<Animator> ();
-		bool EndComplete = false;
+		EndComplete = false;
 
 		Spawner = GameObject.Find ("pipe");
 		Spawned = Spawner.GetComponent<SpawnManager> ();
 	}
 
 	void Update(){
+		if (health == 0 && Input.GetMouseButtonDown(0)) {
+			SceneManager.LoadScene ("MainMenu");
+		}
+		if (Winner) {
+			Color c = WinText.color;
+			c.a = 255f;
+			WinText.color = c;
+			DestroyAllEnemies();
+			if (Input.GetMouseButtonDown (0)) {
+				SceneManager.LoadScene ("MainMenu");
+			}
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D coll){
@@ -32,6 +46,7 @@ public class CollisionManager : PlayerState {
 				health -= 1;
 				SoundSource.clip = FindAudioClip ("MarioPain");
 				SoundSource.Play ();
+				MarioInPain = true;
 				if (coll.gameObject.transform.position.x > transform.position.x) {
 					physics.AddForce (new Vector2 (BlowBack.x * -1, BlowBack.y), ForceMode2D.Impulse);
 				}
@@ -41,6 +56,10 @@ public class CollisionManager : PlayerState {
 			}
 			if (health == 0) {
 				Destroy (coll.gameObject);
+				if (SoundSource.isPlaying || !MarioInPain) {
+					SoundSource.clip = FindAudioClip ("GameOverMusic");
+					SoundSource.Play ();
+				}
 				StartCoroutine ("GameOver");
 			}
 
@@ -53,6 +72,7 @@ public class CollisionManager : PlayerState {
 		}
 		if (coll.gameObject.name == "Zombie(Clone)") {
 			SoundSource.clip = FindAudioClip ("MarioFootsteps");
+			MarioInPain = false;
 		}
 	}	
 
@@ -68,7 +88,18 @@ public class CollisionManager : PlayerState {
 				if (Spawned.SpawnedEnemies [i] != null) {
 					Destroy (Spawned.SpawnedEnemies [i]);
 				}
+					
 			} 
+		}
+		if (other.gameObject.name == "DeathBox") {
+			health = 0;
+			if (health == 0) {
+				if (SoundSource.isPlaying || !MarioInPain) {
+					SoundSource.clip = FindAudioClip ("GameOverMusic");
+					SoundSource.Play ();
+				}
+				StartCoroutine ("GameOver");
+			}		
 		}
 	}
 
@@ -78,8 +109,9 @@ public class CollisionManager : PlayerState {
 				StartCoroutine ("WaitAtCastle");
 			}
 			if (!EndComplete) {
-				transform.position = Vector2.MoveTowards (transform.position, Destination.position, 20f * Time.deltaTime); 
+				transform.position = Vector2.MoveTowards (transform.position, Destination.position, 20f * Time.deltaTime);
 			}
+			Winner = true;
 		}
 	}
 
@@ -90,9 +122,10 @@ public class CollisionManager : PlayerState {
 	}
 
 	public IEnumerator GameOver(){
-		SoundSource.clip = FindAudioClip ("GameOverMusic");
-		SoundSource.Play ();
-		yield return new WaitForSeconds (SoundSource.clip.length);
+		DisableTheScripts ();
+		DestroyAllEnemies ();
+		PlayerAnim.SetInteger ("AnimState", 2);
+		yield return new WaitForSeconds (FindAudioClip("GameOverMusic").length);
 		SceneManager.LoadScene ("MainMenu");
 	}
 
@@ -106,6 +139,14 @@ public class CollisionManager : PlayerState {
 	void DisableTheScripts(){
 		for (int i = 0; i < DisableScripts.Length; i++) {
 			DisableScripts [i].enabled = false;
+		}
+
+	}
+
+	void DestroyAllEnemies(){
+		GameObject[] InScene = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject Enemy in InScene) {
+			Destroy (Enemy);
 		}
 	}
 }
