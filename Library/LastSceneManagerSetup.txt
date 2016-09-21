@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Secen_0_.unity
+- path: C:/Users/Gregory/Dropbox/Beat_Type/Beat_Type/Assets/Scenes/beat_type.unity
   isLoaded: 1
   isActive: 1

@@ -32,7 +32,11 @@ public class CollisionManager : PlayerState {
 			Standing = true;
 		}
 		if (coll.gameObject.name == "Zombie(Clone)") {
-			health -= 1;
+			if (health != 0) {
+				health -= 1;
+			}
+			SoundSource.clip = FindAudioClip ("MarioPain");
+			SoundSource.Play ();
 			if (coll.gameObject.transform.position.x > transform.position.x) {
 				physics.AddForce (new Vector2 (BlowBack.x * -1, BlowBack.y), ForceMode2D.Impulse);
 			}
@@ -46,7 +50,10 @@ public class CollisionManager : PlayerState {
 		if (coll.gameObject.tag == "Ground"){
 			Standing = false;
 		}
-	}
+		if (coll.gameObject.name == "Zombie(Clone)") {
+			SoundSource.clip = FindAudioClip ("MarioFootSteps");
+		}
+	}	
 
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.gameObject.name == "Barreta") {

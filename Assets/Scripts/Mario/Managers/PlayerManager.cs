@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour {
 
 	private CollisionManager Death;
 
+
+
 	void Awake () {
 		inputState = GetComponent<InputState> ();
 		//walkBehavior = GetComponent<Walk> ();
@@ -42,4 +44,6 @@ public class PlayerManager : MonoBehaviour {
 	void ChangeAnimationState(int value){
 		animator.SetInteger ("AnimState", value);
 	}
+
+
 }

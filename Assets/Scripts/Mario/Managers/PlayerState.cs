@@ -14,11 +14,23 @@ public class PlayerState : MonoBehaviour {
 	public float direction;
 	public Rigidbody2D physics;
 
-	void Start (){
+	public AudioClip[] soundEffects; 
+	public AudioSource SoundSource;
+
+	void Awake (){
 		physics = GetComponent<Rigidbody2D> ();
+		SoundSource = GetComponent<AudioSource> ();
 	}
 
 	void Update (){
 		direction = transform.localScale.x;
+	}
+
+	public AudioClip FindAudioClip(string clipName){
+		for (int i = 0; i < soundEffects.Length; i++)
+			if (clipName == soundEffects [i].name) {
+				return soundEffects[i];
+			}
+		return null;
 	}
 }
