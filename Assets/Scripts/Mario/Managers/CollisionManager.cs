@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CollisionManager : PlayerState {
 	public BarretaManager Gun;
 	public MonoBehaviour[] DisableScripts;
 
-	private Rigidbody2D physicsA;
 	private Transform Destination;
 	private Animator PlayerAnim;
 	private bool EndComplete;
@@ -13,7 +13,6 @@ public class CollisionManager : PlayerState {
 	private SpawnManager Spawned;
 
 	void Start(){
-		physicsA = GetComponent<Rigidbody2D> ();
 		PlayerAnim = GetComponent<Animator> ();
 		bool EndComplete = false;
 
@@ -22,9 +21,6 @@ public class CollisionManager : PlayerState {
 	}
 
 	void Update(){
-		if (health == 0) {
-			DisableTheScripts ();
-		}
 	}
 
 	void OnCollisionEnter2D (Collision2D coll){
@@ -34,15 +30,20 @@ public class CollisionManager : PlayerState {
 		if (coll.gameObject.name == "Zombie(Clone)") {
 			if (health != 0) {
 				health -= 1;
+				SoundSource.clip = FindAudioClip ("MarioPain");
+				SoundSource.Play ();
+				if (coll.gameObject.transform.position.x > transform.position.x) {
+					physics.AddForce (new Vector2 (BlowBack.x * -1, BlowBack.y), ForceMode2D.Impulse);
+				}
+				else {
+					physics.AddForce (BlowBack, ForceMode2D.Impulse);
+				}
 			}
-			SoundSource.clip = FindAudioClip ("MarioPain");
-			SoundSource.Play ();
-			if (coll.gameObject.transform.position.x > transform.position.x) {
-				physics.AddForce (new Vector2 (BlowBack.x * -1, BlowBack.y), ForceMode2D.Impulse);
+			if (health == 0) {
+				Destroy (coll.gameObject);
+				StartCoroutine ("GameOver");
 			}
-			else {
-				physics.AddForce (BlowBack, ForceMode2D.Impulse);
-			}
+
 		}
 	}
 
@@ -51,7 +52,7 @@ public class CollisionManager : PlayerState {
 			Standing = false;
 		}
 		if (coll.gameObject.name == "Zombie(Clone)") {
-			SoundSource.clip = FindAudioClip ("MarioFootSteps");
+			SoundSource.clip = FindAudioClip ("MarioFootsteps");
 		}
 	}	
 
@@ -86,6 +87,13 @@ public class CollisionManager : PlayerState {
 		if (other.gameObject.name == "Barreta") {
 			Gun.isActive = false;
 		}
+	}
+
+	public IEnumerator GameOver(){
+		SoundSource.clip = FindAudioClip ("GameOverMusic");
+		SoundSource.Play ();
+		yield return new WaitForSeconds (SoundSource.clip.length);
+		SceneManager.LoadScene ("MainMenu");
 	}
 
 	IEnumerator WaitAtCastle(){
